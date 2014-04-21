@@ -1,0 +1,41 @@
+body {
+    background: url(/shit/bg.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+::selection {
+    background: red;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.big-text {
+    color: white;
+    text-shadow: 1px 1px 0 black, 2px 2px 0 black, 3px 3px 0 black, 4px 4px 0 black, 5px 5px 0 black;
+}
+
+.full {
+    width: 100%;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.langchange {
+    background: rgba(0,0,0,0.5);
+    padding: 5px;
+    color: white;
+    width: 100%;
+}
+
+.langchange:hover {
+    background: rgba(0,0,0,0.75);
+}
+
+.langchange:active {
+    background: rgba(0,0,0,0.25);
+}

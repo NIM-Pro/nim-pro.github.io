@@ -1,10 +1,55 @@
 <!DOCTYPE HTML>
-<html>
+<html ng-app="App">
 <head>
 <meta charset="utf-8"/>
 <title>NotIntMan#prod.web-site</title>
+<link rel="stylesheet" href="/shit/bootstrap.min.css">
+<link rel="stylesheet" href="/shit/style.css">
+<script src="/shit/angular.min.js"></script>
+<script src="/index.lang.en.js"></script>
+<script src="/shit/require.js"></script>
+<script src="/index.js"></script>
 </head>
-<body>
-Hello, world!
+<body ng-controller="index" ng-click="2+2" ng-hide="loading">
+<div class="container-fluid">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <li><a class="navbar-brand" href="#"><b>NotIntMan#prod.web-site</b></a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">{{lang.works}}</a></li>
+                <li><a href="#">{{lang.contacts}}</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div style="height:160px"></div>
+    <div class="row text-center">
+        <div class="col-md-8"></div>
+        <div class="col-md-4 no-padding">
+            <div class="btn langchange" ng-click="changeLang()">{{lang.otherlang}}</div>
+        </div>
+    </div>
+    <div class="row text-center big-text">
+        <h1>{{lang.title}}</h1>
+    </div>
+    <div style="height:20px"></div>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-2 no-padding">
+            <div class="btn full btn-primary">{{lang.goworks}}</div>
+        </div>
+        <div class="col-md-2 no-padding">
+            <div class="btn full btn-danger">{{lang.gocontacts}}</div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+    <div style="height:200px"></div>
+</div>
+<div class="container-fluid" style="background: white;">
+    <div class="row">
+        <div style="height:100px"></div>
+    </div>
+</div>
 </body>
 </html>
