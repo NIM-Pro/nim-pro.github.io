@@ -1,15 +1,11 @@
 angular.module('App',[]).controller('index',['$scope',function($scope) {
-    $scope.loading=false;
-    $scope.lang=langIndex;
-    $scope.currentLang='en';
+    if (!localStorage.lang)
+        localStorage.lang=$scope.currentLang=Language.currentLang;
+    else
+        $scope.currentLang=localStorage.lang;
+    $scope.lang=Language.getLang($scope.currentLang);
     $scope.changeLang=function() {
-        if ($scope.currentLang=='en')
-            $scope.currentLang='ru';
-        else
-            $scope.currentLang='en';
-        require(['index.lang.'+$scope.currentLang],function(lang) {
-            $scope.lang=lang;
-            document.body.click();
-        });
+        $scope.lang=Language.changeLang();
+        localStorage.lang=$scope.currentLang=Language.currentLang;
     };
 }]);

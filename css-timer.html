@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS TIMER</title>
+<meta charset="utf-8"/>
+<style>
+body {
+    background: black;
+    font-family: Arial;
+}
+
+.vertcent {
+    height: 450px;
+    width: 350px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -175px;
+    margin-top: -225px;
+}
+
+.clocks {
+    cursor: none;
+    width: 300px;
+    height: 300px;
+    border-radius: 150px;
+    margin: 25px auto;
+    box-shadow: 0 0 6px 3px #23BBC0;
+}
+
+.clocks .line {
+    height: 300px;
+    width: 2px;
+    position: absolute;
+    margin: 0 149px;
+}
+
+.clocks .line.hours {
+    animation: lineRotate 43200s linear infinite;
+    -webkit-animation: lineRotate 43200s linear infinite;
+}
+
+.clocks .line.hours div {
+    background: #1CBEC1;
+    box-shadow: 0 0 9px 3px #1CBEC1;
+    margin-top: 100px;
+    height: 50px;
+}
+
+.clocks .line.mins {
+    animation: lineRotate 3600s linear infinite;
+    -webkit-animation: lineRotate 3600s linear infinite;
+}
+
+.clocks .line.mins div {
+    background: #32EF88;
+    box-shadow: 0 0 9px 3px #32EF88;
+    margin-top: 50px;
+    height: 100px;
+}
+
+.clocks .line.secs {
+    animation: lineRotate 60s linear infinite;
+    -webkit-animation: lineRotate 60s linear infinite;
+}
+
+.clocks .line.secs div {
+    background: #B2F625;
+    box-shadow: 0 0 9px 3px #B2F625;
+    margin-top: 0px;
+    height: 150px;
+}
+
+.nums {
+    cursor: none;
+    position: absolute;
+    width: 240px;
+    margin-top: 10px;
+    left: 50%;
+    margin-left: -120px;
+    font-size: 25px;
+    height: 40px;
+    padding-top: 20px;
+    overflow: hidden;
+    xbox-shadow: 0 0 6px 3px #23BBC0;
+    border: 1px solid #23BBC0;
+    border-width: 1px 0;
+}
+
+.nums .num {
+    position: absolute;
+    width: 30px;
+    text-align: center;
+}
+
+.nums .num p {
+    margin-bottom: 10px;
+    margin-top: 0;
+    width: 30px;
+    height: 30px;
+}
+
+.nums .num.hours0 {
+    color: #1CBEC1;
+    text-shadow: 0 0 5px #1CBEC1;
+    animation: num2Change 86400s cubic-bezier(.5,0,1,0) infinite;
+    -webkit-animation: num2Change 86400s cubic-bezier(.5,0,1,0) infinite;
+}
+
+.nums .num.hours1 {
+    margin-left: 30px;
+    color: #1CBEC1;
+    text-shadow: 0 0 5px #1CBEC1;
+    animation: numChange 36000s cubic-bezier(.5,0,1,0) infinite;
+    -webkit-animation: numChange 36000s cubic-bezier(.5,0,1,0) infinite;
+}
+
+.nums .num.mins0 {
+    margin-left: 90px;
+    color: #32EF88;
+    text-shadow: 0 0 5px #32EF88;
+    animation: num1Change 3600s cubic-bezier(.5,0,1,0) infinite;
+    -webkit-animation: num1Change 3600s cubic-bezier(.5,0,1,0) infinite;
+}
+
+.nums .num.mins1 {
+    margin-left: 120px;
+    color: #32EF88;
+    text-shadow: 0 0 5px #32EF88;
+    animation: numChange 600s cubic-bezier(.5,0,1,0) infinite;
+    -webkit-animation: numChange 600s cubic-bezier(.5,0,1,0) infinite;
+}
+
+.nums .num.secs0 {
+    margin-left: 180px;
+    color: #B2F625;
+    text-shadow: 0 0 5px #B2F625;
+    animation: num1Change 60s cubic-bezier(.5,0,1,0) infinite;
+    -webkit-animation: num1Change 60s cubic-bezier(.5,0,1,0) infinite;
+}
+
+.nums .num.secs1 {
+    margin-left: 210px;
+    color: #B2F625;
+    text-shadow: 0 0 5px #B2F625;
+    animation: numChange 10s cubic-bezier(.5,0,1,0) infinite;
+    -webkit-animation: numChange 10s cubic-bezier(.5,0,1,0) infinite;
+}
+
+@keyframes lineRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes lineRotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    50% {
+        -webkit-transform: rotate(180deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+@keyframes numChange {
+    0% {
+        margin-top: 0px;
+    }
+    10% {
+        margin-top: -40px;
+    }
+    20% {
+        margin-top: -80px;
+    }
+    30% {
+        margin-top: -120px;
+    }
+    40% {
+        margin-top: -160px;
+    }
+    50% {
+        margin-top: -200px;
+    }
+    60% {
+        margin-top: -240px;
+    }
+    70% {
+        margin-top: -280px;
+    }
+    80% {
+        margin-top: -320px;
+    }
+    90% {
+        margin-top: -360px;
+    }
+    100% {
+        margin-top: -400px;
+    }
+}
+@-webkit-keyframes numChange {
+    0% {
+        margin-top: 0px;
+    }
+    10% {
+        margin-top: -40px;
+    }
+    20% {
+        margin-top: -80px;
+    }
+    30% {
+        margin-top: -120px;
+    }
+    40% {
+        margin-top: -160px;
+    }
+    50% {
+        margin-top: -200px;
+    }
+    60% {
+        margin-top: -240px;
+    }
+    70% {
+        margin-top: -280px;
+    }
+    80% {
+        margin-top: -320px;
+    }
+    90% {
+        margin-top: -360px;
+    }
+    100% {
+        margin-top: -400px;
+    }
+}
+@keyframes num1Change {
+    0% {
+        margin-top: 0px;
+    }
+    16.6% {
+        margin-top: -40px;
+    }
+    33.3% {
+        margin-top: -80px;
+    }
+    50% {
+        margin-top: -120px;
+    }
+    66.6% {
+        margin-top: -160px;
+    }
+    83.3% {
+        margin-top: -200px;
+    }
+    100% {
+        margin-top: -240px;
+    }
+}
+@-webkit-keyframes num1Change {
+    0% {
+        margin-top: 0px;
+    }
+    16.6% {
+        margin-top: -40px;
+    }
+    33.3% {
+        margin-top: -80px;
+    }
+    50% {
+        margin-top: -120px;
+    }
+    66.6% {
+        margin-top: -160px;
+    }
+    83.3% {
+        margin-top: -200px;
+    }
+    100% {
+        margin-top: -240px;
+    }
+
+}
+@keyframes num2Change {
+    0% {
+        margin-top: 0px;
+    }
+    41.6% {
+        margin-top: -40px;
+    }
+    83.3% {
+        margin-top: -80px;
+    }
+    100% {
+        margin-top: -120px;
+    }
+}
+@-webkit-keyframes num2Change {
+    0% {
+        margin-top: 0px;
+    }
+    41.6% {
+        margin-top: -40px;
+    }
+    83.3% {
+        margin-top: -80px;
+    }
+    100% {
+        margin-top: -120px;
+    }
+}
+</style>
+</head>
+<body>
+<div class="vertcent">
+<div class="clocks">
+    <div class="line hours"><div></div></div>
+    <div class="line mins"><div></div></div>
+    <div class="line secs"><div></div></div>
+</div>
+<div class="nums">
+    <div class="num hours0"><p>0</p><p>1</p><p>2</p><p>0</p></div>
+    <div class="num hours1"><p>0</p><p>1</p><p>2</p><p>3</p><p>4</p><p>5</p><p>6</p><p>7</p><p>8</p><p>9</p><p>0</p></div>
+    <div class="num mins0"><p>0</p><p>1</p><p>2</p><p>3</p><p>4</p><p>5</p><p>0</p></div>
+    <div class="num mins1"><p>0</p><p>1</p><p>2</p><p>3</p><p>4</p><p>5</p><p>6</p><p>7</p><p>8</p><p>9</p><p>0</p></div>
+    <div class="num secs0"><p>0</p><p>1</p><p>2</p><p>3</p><p>4</p><p>5</p><p>0</p></div>
+    <div class="num secs1"><p>0</p><p>1</p><p>2</p><p>3</p><p>4</p><p>5</p><p>6</p><p>7</p><p>8</p><p>9</p><p>0</p></div>
+</div>
+</div>
+<script>
+var now=new Date;
+var delay=((now.getHours())*3600)+(now.getMinutes()*60)+(now.getSeconds());
+//delay=((23)*3600)+(29*60)+(57);
+var elems=document.getElementsByClassName('line');
+for (var i=0; i<elems.length; i++) {
+    elems[i].style.animationDelay='-'+delay.toString()+'s';
+    elems[i].style.webkitAnimationDelay='-'+delay.toString()+'s';
+}
+var elems=document.getElementsByClassName('num');
+for (var i=0; i<elems.length; i++) {
+    elems[i].style.animationDelay='-'+delay.toString()+'s';
+    elems[i].style.webkitAnimationDelay='-'+delay.toString()+'s';
+}
+</script>
+</body>
+</html>

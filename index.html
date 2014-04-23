@@ -6,50 +6,72 @@
 <link rel="stylesheet" href="/shit/bootstrap.min.css">
 <link rel="stylesheet" href="/shit/style.css">
 <script src="/shit/angular.min.js"></script>
+<script src="/shit/script.js"></script>
 <script src="/index.lang.en.js"></script>
-<script src="/shit/require.js"></script>
+<script src="/index.lang.ru.js"></script>
 <script src="/index.js"></script>
 </head>
-<body ng-controller="index" ng-click="2+2" ng-hide="loading">
+<body ng-controller="index" ng-click="2+2">
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+        <ul class="nav navbar-nav">
+            <li><a class="navbar-brand" href="#"><b>NotIntMan#prod.web-site</b></a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#works">{{lang.works}}</a></li>
+            <li><a href="#contacts">{{lang.contacts}}</a></li>
+        </ul>
+    </div>
+</nav>
 <div class="container-fluid">
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container">
-            <ul class="nav navbar-nav">
-                <li><a class="navbar-brand" href="#"><b>NotIntMan#prod.web-site</b></a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">{{lang.works}}</a></li>
-                <li><a href="#">{{lang.contacts}}</a></li>
-            </ul>
-        </div>
-    </nav>
-    <div style="height:160px"></div>
+    <div style="height:100px"></div>
     <div class="row text-center">
-        <div class="col-md-8"></div>
-        <div class="col-md-4 no-padding">
-            <div class="btn langchange" ng-click="changeLang()">{{lang.otherlang}}</div>
+        <div class="col-md-9"></div>
+        <div class="col-md-3 no-padding">
+            <div class="col-md-12"><div class="btn full btn-info" ng-click="changeLang()">{{lang.otherlang}}</div></div>
         </div>
     </div>
-    <div class="row text-center big-text">
-        <h1>{{lang.title}}</h1>
+    <div class="row text-center">
+        <h1 class="big-text">{{lang.title}}</h1>
     </div>
     <div style="height:20px"></div>
     <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-2 no-padding">
-            <div class="btn full btn-primary">{{lang.goworks}}</div>
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="col-md-5 no-padding"><a href="#works" class="btn full btn-primary">{{lang.goworks}}</a></div>
+            <div class="col-md-2"></div>
+            <div class="col-md-5 no-padding"><a href="#contacts" class="btn full btn-danger">{{lang.gocontacts}}</a></div>
         </div>
-        <div class="col-md-2 no-padding">
-            <div class="btn full btn-danger">{{lang.gocontacts}}</div>
-        </div>
-        <div class="col-md-4"></div>
+        <div class="col-md-3"></div>
     </div>
     <div style="height:200px"></div>
 </div>
-<div class="container-fluid" style="background: white;">
+<div class="container-fluid" style="background: white;" id="works">
     <div class="row">
-        <div style="height:100px"></div>
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <h2>{{lang.works}}</h2>
+            <p>{{lang.worksUnderTitle}}</p>
+            <a href="/css-timer.html" target="_blank" class="btn btn-primary">{{lang.clickme}}</a>
+        </div>
+        <div class="col-md-3"></div>
     </div>
+    <div style="height:50px"></div>
+</div>
+<div class="container-fluid" style="background: white;" id="contacts">
+    <div style="height:50px"></div>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <h2>{{lang.contacts}}</h2>
+            <p>{{lang.contactme}}</p>
+            <div><a href="mailto:shepardiwe@gmail.com" class="btn btn-link">{{lang.emailme}}</a></div>
+            <div><a href="https://vk.com/id38520725" target="_blank" class="btn btn-link">{{lang.vkme}}</a></div>
+            <div><a href="skype:keksmen-chick?call" class="btn btn-link">{{lang.callme}}</a></div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    <div style="height:50px"></div>
 </div>
 </body>
 </html>
