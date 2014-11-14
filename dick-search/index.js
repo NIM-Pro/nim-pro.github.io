@@ -14,6 +14,7 @@ goSearch=function() {
     if (!searchForm.classList.contains('search'))
         searchForm.classList.add('search');
     var text=document.getElementById('request').value;
+    document.location.hash='#'+text;
     return search.then(function(c) {
         c.execute(text);
     });
@@ -21,4 +22,12 @@ goSearch=function() {
 
 checkKey=function(e) {
     if (e.keyCode===13) goSearch();
+};
+
+onload=function() {
+    var text=document.location.hash.slice(1);
+    if (text.length>0) {
+        document.getElementById('request').value=text;
+        goSearch();
+    };
 };
