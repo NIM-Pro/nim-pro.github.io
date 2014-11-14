@@ -1,0 +1,76 @@
+.gsc-twiddleRegionCell.gsc-twiddle-opened,
+.gsc-twiddle .gsc-title,
+.gsc-search-box,
+.gs-watermark,
+.gsc-thumbnail-inside,
+.gsc-url-top,
+.gs-visibleUrl {
+    display: none;
+}
+
+body {
+    background: #f2eabc;
+}
+
+#searchForm {
+    display: block;
+}
+
+#searchForm #logo,
+#searchForm #requestForm {
+    display: block;
+    margin: 0 auto;
+}
+
+#searchForm #requestForm {
+    width: 600px;
+}
+
+#searchForm #request,
+#searchForm #goSearch {
+    margin: 2px;
+    border: 1px solid #111113;
+    background: rgba(0,0,0,0);
+}
+
+#searchForm #goSearch {
+    cursor: pointer;
+}
+
+#searchForm #request {
+    width: 495px;
+    outline: none;
+}
+
+#searchForm #goSearch {
+    width: 90px;
+}
+
+#searchForm.search #logo,
+#searchForm.search #requestForm {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#searchcontrol {
+    width: 600px;
+}
+
+a, .gsc-cursor-page {
+    color: #f2502c;
+}
+
+.gsc-webResult.gsc-result {
+    margin: 25px 0;
+}
+
+.gsc-cursor-page {
+    display: inline-block;
+    margin: 5px 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.gsc-cursor-page.gsc-cursor-current-page {
+    color: #111113;
+}
