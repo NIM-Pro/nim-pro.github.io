@@ -74,3 +74,17 @@ a, .gsc-cursor-page {
 .gsc-cursor-page.gsc-cursor-current-page {
     color: #111113;
 }
+
+@media (max-width: 600px) {
+    #searchForm #request,
+    #searchForm #goSearch,
+    #searchForm #requestForm,
+    #searchcontrol {
+        width: 100%;
+        display: block;
+        margin: 5px 0;
+    }
+    #searchForm.search #logo {
+        display: block;
+    }
+}
