@@ -24,7 +24,7 @@ checkKey=function(e) {
     if (e.keyCode===13) goSearch();
 };
 
-onload=function() {
+onload=onhashchange=function() {
     var text=document.location.hash.slice(1);
     if (text.length>0) {
         document.getElementById('request').value=text;
