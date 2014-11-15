@@ -27,7 +27,7 @@ checkKey=function(e) {
 onload=onhashchange=function() {
     var text=document.location.hash.slice(1);
     if (text.length>0) {
-        document.getElementById('request').value=text;
+        document.getElementById('request').value=decodeURI(text);
         goSearch();
     };
 };
