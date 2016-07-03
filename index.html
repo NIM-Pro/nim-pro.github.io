@@ -1,77 +1,97 @@
 <!DOCTYPE HTML>
-<html ng-app="App">
-<head>
-<meta charset="utf-8"/>
-<title>NotIntMan#prod.web-site</title>
-<link rel="stylesheet" href="/shit/bootstrap.min.css">
-<link rel="stylesheet" href="/shit/style.css">
-<script src="/shit/angular.min.js"></script>
-<script src="/shit/script.js"></script>
-<script src="/index.lang.en.js"></script>
-<script src="/index.lang.ru.js"></script>
-<script src="/index.js"></script>
-</head>
-<body ng-controller="index" ng-click="2+2">
-<nav class="navbar navbar-default navbar-static-top" role="navigation">
-    <div class="container">
-        <ul class="nav navbar-nav">
-            <li><a class="navbar-brand" href="#"><b>NotIntMan#prod.web-site</b></a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="#works">{{lang.works}}</a></li>
-            <li><a href="#contacts">{{lang.contacts}}</a></li>
-        </ul>
+<html>
+  <head>
+    <title>Демин Д.В.</title>
+    <meta charset="utf-8"/>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial;
+        font-size: 14pt;
+        color: #727272;
+      }
+      #top {
+        background: #0288d1;
+        height: 250px;
+        padding: 25px;
+      }
+      #top #name {
+        color: #fff;
+        font-size: 50pt;
+        font-weight: bold;
+        margin-left: 50%;
+      }
+      #top #name p {
+        margin: 0;
+      }
+      #avatar {
+        width: 400px;
+        height: 400px;
+        border-radius: 200px;
+        border: 5px solid #000;
+        position: absolute;
+        right: 50%;
+        margin-right: 25px;
+        top: 100px;
+      }
+      #hellotext {
+        margin-left: 50%;
+        width: 500px;
+      }
+      .important {
+        color: #212121;
+        font-size: 18pt;
+        font-weight: bold;
+      }
+      a {
+        color: #FF5252;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="top">
+      <div id="name">
+        <p>Дмитрий</p>
+        <p>Владимирович</p>
+        <p>Демин</p>
+      </div>
     </div>
-</nav>
-<div class="container-fluid">
-    <div style="height:100px"></div>
-    <div class="row text-center">
-        <div class="col-md-9"></div>
-        <div class="col-md-3 no-padding">
-            <div class="col-md-12"><div class="btn full btn-info" ng-click="changeLang()">{{lang.otherlang}}</div></div>
+    <div>
+      <img id="avatar" src="avatar.png"/>
+      <div id="hellotext">
+        <p>Студент факультета информационных технологий "все и так знают какого" университета.</p>
+        <div id="contacts">
+          <!-- <p class="important">Контактики</p>
+          <p>Почта: <a href="mailto:shepardiwe@gmail.com">shepardiwe@gmail.com</a></p>
+          <p>Телефон: +7 (952) 940-66-63</p> -->
+          <p class="important">Похоже, у вас не работают скрипты.</p>
+          <p>Это очень печально потому, что я не хочу, чтобы восставшие разумные машины знали мой номер телефона или почту, а потому поставил эту примитивную защитку.</p>
         </div>
+        <script>
+          var data = [[60,211,-205.5,46.5],[108,-41.16666666666667,38,-7.833333333333336],[61,-131,131.5,-27.5],[112,-4.66666666666665,4.5,-0.8333333333333321],[97,-10.499999999999982,37,-13.499999999999998],[62,1769,-933.5,152.49999999999994],[1090,-41.99999999999994,29,-4.999999999999972],[1080,-334,505,-169],[47,176.83333333333334,-139,27.166666666666664],[112,-1239.8333333333333,1524,-334.16666666666663],[1095,-326.1666666666667,485,-163.83333333333334],[32,-13.499999999999991,60,-18.5],[104,33.83333333333334,-30,6.166666666666671],[61,-141,145.5,-31.5],[105,-5.5,11.5,-3],[58,116.33333333333334,-72,12.666666666666668],[112,-51.999999999999986,47.5,-10.5],[105,34.33333333333333,-22.5,2.166666666666666],[103,27.666666666666686,-28,6.333333333333336],[108,-171.5,135.5,-26],[109,-152.5,90.5,-13],[104,-23.33333333333333,27,-6.666666666666664],[114,-26.833333333333336,14.5,-1.6666666666666679],[101,-111.33333333333333,92.5,-18.166666666666664],[97,-9.499999999999982,27.5,-9.999999999999998],[99,8,9.5,-5.5],[47,131.83333333333334,-101.5,19.666666666666664],[47,176.83333333333334,-139,27.166666666666664],[112,-1247.3333333333333,1534.5,-337.16666666666663],[1083,-30.5,31.5,-7],[1085,-1848.8333333333333,982.5,-160.66666666666666],[55,-45.83333333333333,26.5,-3.666666666666666],[53,2.000000000000009,-6,1.0000000000000009],[57,-5.5,0.5,0],[54,13.5,-18,4.5],[51,53.33333333333333,-61,16.666666666666664],[62]]
+          var node = document.getElementById('contacts')
+          function fnByCoef(data) {
+            return function(x) {
+              var result = 0
+              for (var i = 0; i < data.length; i++)
+                result += data[i] * Math.pow(x, i)
+              return result
+            }
+          }
+          function repairData(coefs) {
+            var fn = fnByCoef(coefs)
+            var result = ''
+            for (var i = 0; i < coefs.length; i++)
+              result += String.fromCharCode(Math.round(fn(i)))
+            return result
+          }
+          node.innerHTML = data.map(function(part) {
+            return repairData(part)
+          }).join('')
+        </script>
+      </div>
     </div>
-    <div class="row text-center">
-        <h1 class="big-text">{{lang.title}}</h1>
-    </div>
-    <div style="height:20px"></div>
-    <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
-            <div class="col-md-5 no-padding"><a href="#works" class="btn full btn-primary">{{lang.goworks}}</a></div>
-            <div class="col-md-2"></div>
-            <div class="col-md-5 no-padding"><a href="#contacts" class="btn full btn-danger">{{lang.gocontacts}}</a></div>
-        </div>
-        <div class="col-md-3"></div>
-    </div>
-    <div style="height:200px"></div>
-</div>
-<div class="container-fluid" style="background: white;" id="works">
-    <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
-            <h2>{{lang.works}}</h2>
-            <p>{{lang.worksUnderTitle}}</p>
-            <a href="/css-timer.html" target="_blank" class="btn btn-primary">{{lang.clickme}}</a>
-        </div>
-        <div class="col-md-3"></div>
-    </div>
-    <div style="height:50px"></div>
-</div>
-<div class="container-fluid" style="background: white;" id="contacts">
-    <div style="height:50px"></div>
-    <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
-            <h2>{{lang.contacts}}</h2>
-            <p>{{lang.contactme}}</p>
-            <div><a href="mailto:shepardiwe@gmail.com" class="btn btn-link">{{lang.emailme}}</a></div>
-            <div><a href="https://vk.com/id38520725" target="_blank" class="btn btn-link">{{lang.vkme}}</a></div>
-            <div><a href="skype:keksmen-chick?call" class="btn btn-link">{{lang.callme}}</a></div>
-        </div>
-        <div class="col-md-3"></div>
-    </div>
-    <div style="height:50px"></div>
-</div>
-</body>
+  </body>
 </html>
